@@ -11,19 +11,33 @@
   <title>Capstone Brochure</title>
 </head>
 <body>
-  <h1 class="text-center">Capstone Brochure</h1>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#/">
-          <span class="glyphicon glyphicon-book"></span>
-        </a>
-        <a class="navbar-brand" href="/#/sample">Sample Page</a>
-        <a class="navbar-brand" href="/#/about/developer">About The Developer</a>
-        <a class="navbar-brand" href="/#/about/galvanize">About Galvanize</a>
+  <header>
+    <h1 class="text-center">Capstone Brochure</h1>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <ul class="nav navbar-nav">
+            <li>
+              <a class="navbar-brand" href="#/">
+                <span class="glyphicon glyphicon-book"></span>
+              </a>
+            </li>
+            <li>
+              <a class="navbar-brand" href="/#/sample">Sample Page</a>
+            </li>
+            <li>
+              <a class="navbar-brand" href="/#/about/developer">About The Developer</a>
+            </li>
+            <li>
+              <a class="navbar-brand" href="/#/about/galvanize">About Galvanize</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
+  <!-- <div ng-view class="text-center"></div> -->
+  <gs-home class="text-center"></gs-home>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
