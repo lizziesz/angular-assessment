@@ -1,0 +1,12 @@
+<h1>Search!</h1>
+<div class="submitForm">
+  <form ng-submit="view.searchBooks(searchParam)" name="searchForm" class="searchForm">
+    <input type="text" name="searchParam" placeholder="Title/Author" ng-model="searchParam" required class="formInput">
+    <input type="submit" value="Search Books" class="submitButton">
+  </form>
+  <div class="results">
+    <ul ng-repeat="book in view.data">
+      <li>{{book.volumeInfo.title}}</li>
+    </ul>
+  </div>
+</div>
