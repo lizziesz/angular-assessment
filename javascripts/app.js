@@ -3,15 +3,17 @@ var app = angular.module('capstoneBrochure', ['ngRoute']);
 app.config(function($routeProvider){
   $routeProvider
     .when('/', {
-      templateUrl: 'routes/home.html'
-      // controller: 'RedditController'
+      templateUrl: 'views/home.html'
     })
     .when('/sample', {
-      templateUrl: 'routes/sample.html'
+      templateUrl: 'views/sample.html'
     })
-    .when('/sample/select/:isbn', {
-      templateUrl: 'routes/select.html',
+    .when('/sample/select/:isbn/:id', {
+      templateUrl: 'views/select.html',
       controller: 'selectController'
+    })
+    .when('/about/developer', {
+      templateUrl: 'views/developer.html'
     })
     .otherwise( { redirectTo: '/' } );
 });
@@ -19,7 +21,7 @@ app.config(function($routeProvider){
 app.directive('gsSampleSearch', function(){
   return {
     restrict: 'E',
-    templateUrl: 'routes/search.html'
+    templateUrl: 'views/search.html'
   }
 });
 
@@ -61,6 +63,7 @@ app.controller('capstoneController', ['$scope', '$http', function($scope, $http)
 app.controller('selectController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
   $scope.view = {};
   var isbn = $routeParams.isbn;
+  $scope.view.bookId = $routeParams.id;
   $http.get('https://www.googleapis.com/books/v1/volumes?q=' + isbn).then(function(data) {
     console.log(data.data.items);
     $scope.view.data = data.data.items;

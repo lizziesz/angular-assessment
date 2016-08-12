@@ -1,0 +1,29 @@
+<!-- <h1>Search!</h1> -->
+<div class="submitForm">
+  <form ng-submit="view.searchBooks(searchParam)" name="searchForm" class="searchForm">
+    <input type="text" name="searchParam" placeholder="Title/Author" ng-model="searchParam" required class="formInput">
+    <input type="submit" value="Search Books" class="submitButton">
+  </form>
+</div>
+  <div class="results" ng-show="view.data">
+    <ul ng-repeat="book in view.data" ng-if="$index % 3 === 0" class="row">
+      <div class="bookResults col-xs-4">
+        <li><a href="/#/sample/select/{{view.data[$index].volumeInfo.title}}/{{view.data[$index].id}}">{{view.data[$index].volumeInfo.title}}</a></li>
+        <li><img ng-src="{{view.data[$index].volumeInfo.imageLinks.thumbnail}}" alt="Book Cover"></li>
+        <li ng-show="view.data[$index].volumeInfo.averageRating">Rating: {{view.data[$index].volumeInfo.averageRating}}</li>
+        <li ng-show="!view.data[$index].volumeInfo.averageRating">No rating available</li>
+      </div>
+      <div class="bookResults col-xs-4" ng-if="view.data.length > ($index + 1)">
+        <li><a href="/#/sample/select/{{view.data[$index + 1].volumeInfo.title}}/{{view.data[$index + 1].id}}">{{view.data[$index + 1].volumeInfo.title}}</a></li>
+        <li><img ng-src="{{view.data[$index + 1].volumeInfo.imageLinks.thumbnail}}" alt="Book Cover"></li>
+        <li ng-show="view.data[$index + 1].volumeInfo.averageRating">Rating: {{view.data[$index + 1].volumeInfo.averageRating}}</li>
+        <li ng-show="!view.data[$index + 1].volumeInfo.averageRating">No rating available</li>
+      </div>
+      <div class="bookResults col-xs-4" ng-if="view.data.length > ($index + 2)">
+        <li><a href="/#/sample/select/{{view.data[$index + 2].volumeInfo.title}}/{{view.data[$index + 2].id}}">{{view.data[$index + 2].volumeInfo.title}}</a></li>
+        <li><img ng-src="{{view.data[$index + 2].volumeInfo.imageLinks.thumbnail}}" alt="Book Cover"></li>
+        <li ng-show="view.data[$index + 2].volumeInfo.averageRating">Rating: {{view.data[$index + 2].volumeInfo.averageRating}}</li>
+        <li ng-show="!view.data[$index + 2].volumeInfo.averageRating">No rating available</li>
+      </div>
+    </ul>
+</div>

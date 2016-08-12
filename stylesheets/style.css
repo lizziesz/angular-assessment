@@ -1,3 +1,12 @@
+header {
+  background-color: #D1EB7F;
+  margin: 0px;
+}
+
+header h1 {
+  margin-top: 0px;
+}
+
 h1 {
   font-family: 'Rock Salt', cursive;
   padding: 25px;
@@ -13,26 +22,111 @@ h1 {
 
 .background {
   margin-top: 0px;
+  position: relative;
+  overflow: hidden;
+  display: block;
   width: 100%;
-  height: 45em;
+  height: 47em;
+}
+
+.background::after {
   background-image: url('../images/background.jpg');
-  background-size: 100% 45em;
+  background-size: cover;
+  content: "";
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 .background h1 {
   margin: 0px;
 }
 
+h3 {
+  font-size: 2.25em;
+}
+
 h3, p {
   font-family: 'Poiret One', cursive;
+  /*font-family: 'Taviraj', serif;*/
   padding: 20px;
   margin-top: 0px;
+  /*color: #4244B2;*/
 }
 
 .sample {
   font-family: 'Poiret One', cursive;
   padding: 20px;
   margin-top: 0px;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  min-height: 47em;
+  height: auto;
+}
+
+.sample::after {
+  background-image: url('../images/background3.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  content: "";
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.sampleInfo {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-bottom: 10px;
+  height: auto;
+  overflow: auto;
+}
+
+.results div {
+  width: 30%;
+  float: left;
+  /*background-color: rgba(255, 255, 255, 0.5);
+  padding-bottom: 10px;
+  height: auto;*/
+}
+
+.results li {
+  width: 80%;
+  float: left;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.fave {
+  margin-top: 0px;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  min-height: 47em;
+  height: auto;
+}
+
+.fave::after {
+  background-image: url('../images/background2.jpg');
+  background-size: cover;
+  content: "";
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 h4:hover {
@@ -89,4 +183,27 @@ input:focus, textarea:focus, select:hover, select:focus, input.ng-pristine:focus
 
 ul {
   list-style-type: none;
+}
+
+.favorites li {
+  padding: 10px;
+  font-family: 'Poiret One', cursive;
+  font-size: 3em;
+  cursor: pointer;
+}
+
+.favorites li:hover {
+  color: purple;
+}
+
+.favorites p {
+  font-size: 1.75em;
+}
+
+.faveInfo {
+  width: 75%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-bottom: 10px;
+  height: auto;
+  margin-bottom: 10px;
 }
