@@ -91,6 +91,10 @@ h3, p {
   overflow: auto;
 }
 
+.sample p {
+  font-size: 20px;
+}
+
 .results div {
   width: 30%;
   float: left;
