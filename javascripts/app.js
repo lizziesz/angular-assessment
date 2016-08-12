@@ -9,6 +9,10 @@ app.config(function($routeProvider){
     .when('/sample', {
       templateUrl: 'routes/sample.html'
     })
+    .when('/sample/select/:isbn', {
+      templateUrl: 'routes/select.html',
+      controller: 'selectController'
+    })
     .otherwise( { redirectTo: '/' } );
 });
 
@@ -24,10 +28,10 @@ app.controller('capstoneController', ['$scope', '$http', function($scope, $http)
   $scope.view.showSampleSearch = false;
 
   $scope.view.searchBooks = function(searchParam) {
-    // $http.get('https://www.googleapis.com/books/v1/volumes?q=' + searchParam).then(function(data) {
-    //   console.log(data.data.items);
-    //   $scope.view.data = data.data.items;
-    // })
+    $http.get('https://www.googleapis.com/books/v1/volumes?q=' + searchParam).then(function(data) {
+      console.log(data.data.items);
+      $scope.view.data = data.data.items;
+    })
     // var url = "https://www.goodreads.com/search/index.json?key=KRvoOkz3phhD77S3dn5Ug&q=" + searchParam;
     //
     // $http.get("https://query.yahooapis.com/v1/public/yql?q=" + "select Status.presence from xml where url = " + url + "&format=json")
@@ -47,9 +51,18 @@ app.controller('capstoneController', ['$scope', '$http', function($scope, $http)
         //     console.log(xml);
         // }
     // ); request(url).pipe(res)
-    $http.get('https://www.goodreads.com/search/index.json?key=KRvoOkz3phhD77S3dn5Ug&q=' + searchParam).then(function(data) {
-      console.log(data);
-    })
+    // $http.get('https://www.goodreads.com/search/index.json?key=KRvoOkz3phhD77S3dn5Ug&q=' + searchParam).then(function(data) {
+    //   console.log(data);
+    // })
 
   }
+}])
+
+app.controller('selectController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+  $scope.view = {};
+  var isbn = $routeParams.isbn;
+  $http.get('https://www.googleapis.com/books/v1/volumes?q=' + isbn).then(function(data) {
+    console.log(data.data.items);
+    $scope.view.data = data.data.items;
+  })
 }])
