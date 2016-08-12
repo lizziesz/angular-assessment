@@ -1,0 +1,33 @@
+<div class="fave">
+  <div class="faveInfo center-block">
+    <h1>Lizzie Szoke</h1>
+    <!-- <img src="images/my_image.jpg" alt="Me" class="img-responsive img-circle center-block"> -->
+    <h3>Here's a list of some things I like. Click each one to find out more details!</h3>
+    <ul class="favorites">
+      <li ng-click="view.showOlympics = !view.showOlympics">Olympics</li>
+      <p ng-show="view.showOlympics" class="animated rotateIn">As my Galvanize cohort may or may not have noticed, I love the Olympics.
+        This is mostly due to the fact that the Olympics is obviously huge for gymnastics -
+        I'm a former gymnast, and gymnastics remains my favorite sport. However, I will watch pretty much any Olympic sport
+        and be entertained.
+      </p>
+      <li ng-click="view.showSkiing = !view.showSkiing">Skiing</li>
+      <p ng-show="view.showSkiing" class="animated slideInRight">I love to ski, and I've been skiing for as long as I can remember. My favorite places
+       to ski include Beaver Creek and Breckendridge, and one day I would love to ski in Alaska. Whistler just got
+       bought by Vail, so it would be awesome to ski Whistler next year!
+      </p>
+      <li ng-click="view.showGiants = !view.showGiants">New York Giants</li>
+      <p ng-show="view.showGiants" class="animated bounceIn">To go along with the Olympics, I also enjoy watching football. I have
+        inherited enthusiasm for the New York Giants from my dad, and they remain my favorite team, with the Denver
+        Broncos also high on my list. My mom is from Wisconsin, so I also have to root for the Packers when I can.
+      </p>
+      <li ng-click="view.showBooks = !view.showBooks">Books</li>
+      <p ng-show="view.showBooks" class="animated flipInY">My love for books is what inspired this app! I have always loved to read, and
+        I was an English major in college. I love reading new books, and am always looking for something else to read,
+        which is partly why I was inspired to build this app - it's fun to have a reason to read a new book, and a group to
+        discuss it with!
+      </p>
+    </ul>
+  </div>
+
+
+</div>
