@@ -1,3 +1,5 @@
+/*heading*/
+
 header {
   background-color: #D1EB7F;
   margin: 0px;
@@ -12,6 +14,8 @@ h1 {
   padding: 25px;
 }
 
+/*Navigation Bar*/
+
 .nav.navbar-nav {
   padding-left: 25px;
 }
@@ -19,6 +23,8 @@ h1 {
 .navbar {
   margin-bottom: 0px;
 }
+
+/*Homepage*/
 
 .background {
   margin-top: 0px;
@@ -46,17 +52,23 @@ h1 {
   margin: 0px;
 }
 
+/*General*/
+
 h3 {
   font-size: 2.25em;
 }
 
 h3, p {
   font-family: 'Poiret One', cursive;
-  /*font-family: 'Taviraj', serif;*/
   padding: 20px;
   margin-top: 0px;
-  /*color: #4244B2;*/
 }
+
+ul {
+  list-style-type: none;
+}
+
+/*Sample app page*/
 
 .sample {
   font-family: 'Poiret One', cursive;
@@ -84,6 +96,20 @@ h3, p {
   z-index: -1;
 }
 
+.results div {
+  width: 30%;
+  float: left;
+}
+
+.results li {
+  width: 80%;
+  float: left;
+  padding: 10px;
+  font-size: 20px;
+}
+
+/*Background Opacity styling*/
+
 .sampleInfo {
   background-color: rgba(255, 255, 255, 0.5);
   padding-bottom: 10px;
@@ -95,48 +121,7 @@ h3, p {
   font-size: 20px;
 }
 
-.results div {
-  width: 30%;
-  float: left;
-  /*background-color: rgba(255, 255, 255, 0.5);
-  padding-bottom: 10px;
-  height: auto;*/
-}
-
-.results li {
-  width: 80%;
-  float: left;
-  padding: 10px;
-  font-size: 20px;
-}
-
-.fave {
-  margin-top: 0px;
-  position: relative;
-  overflow: hidden;
-  display: block;
-  width: 100%;
-  min-height: 47em;
-  height: auto;
-}
-
-.fave::after {
-  background-image: url('../images/background2.jpg');
-  background-size: cover;
-  content: "";
-  opacity: 0.6;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
-
-h4:hover {
-  cursor: pointer;
-  color: purple;
-}
+/*Search form*/
 
 .searchForm {
   width: 80%;
@@ -185,8 +170,34 @@ input:focus, textarea:focus, select:hover, select:focus, input.ng-pristine:focus
   }
 }
 
-ul {
-  list-style-type: none;
+/*Developer page*/
+
+.fave {
+  margin-top: 0px;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  min-height: 47em;
+  height: auto;
+}
+
+.fave::after {
+  background-image: url('../images/background2.jpg');
+  background-size: cover;
+  content: "";
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+h4:hover {
+  cursor: pointer;
+  color: purple;
 }
 
 .favorites li {
