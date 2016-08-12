@@ -1,0 +1,11 @@
+<p>Users will be able to add their selected books to their book club event. This is a very simple example.</p>
+<p>The idea is that users will then be able to see a book club event page, with the time and date listed, along with all the members.</p>
+<p>Each book club will have its own page, from which its upcoming events can be accessed.</p>
+<div ng-repeat="book in view.data">
+  <h1>{{book.volumeInfo.title}}</h1>
+  <div ng-repeat="author in book.volumeInfo.authors">
+    <h3>{{author}}</h3>
+  </div>
+  <img ng-src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="Cover">
+  <p>{{book.volumeInfo.description}}</p>
+</div>

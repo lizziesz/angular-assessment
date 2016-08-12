@@ -6,7 +6,10 @@
   </form>
   <div class="results">
     <ul ng-repeat="book in view.data">
-      <li>{{book.volumeInfo.title}}</li>
+      <a href="/#/sample/select/{{book.volumeInfo.industryIdentifiers[0].identifier}}"><li>{{book.volumeInfo.title}}</li></a>
+      <li><img ng-src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="Book Cover"></li>
+      <li ng-show="book.volumeInfo.averageRating">Rating: {{book.volumeInfo.averageRating}}</li>
+      <li ng-show="!book.volumeInfo.averageRating">No rating available</li>
     </ul>
   </div>
 </div>
