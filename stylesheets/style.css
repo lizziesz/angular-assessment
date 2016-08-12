@@ -96,14 +96,7 @@ ul {
   z-index: -1;
 }
 
-.results div {
-  width: 30%;
-  float: left;
-}
-
 .results li {
-  width: 80%;
-  float: left;
   padding: 10px;
   font-size: 20px;
 }
